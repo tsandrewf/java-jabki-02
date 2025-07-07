@@ -171,5 +171,111 @@ public class Main {
             System.out.println(i);
         }
 
+        // Домашнее задание #02
+        System.out.println();
+        System.out.println("Домашнее задание #02");
+
+        // Определение площади круга
+        {
+            double radius = 10.0;
+            double circleArea = Math.PI * radius * radius;
+            System.out.printf("Площадь круга радиусом %s: %s", radius, circleArea);
+            System.out.println();
+        }
+
+        // Перевод температуры из Цельсия в Фаренгейт
+        {
+            double tmpCelsius = 20.0;
+            double tmpFahrenheit = tmpCelsius * 9.0 / 5.0 + 32.0;
+            System.out.printf("Температура %sC соответствует %sF", tmpCelsius, tmpFahrenheit);
+            System.out.println();
+        }
+
+        // Сравнение длин 2-х строк
+        {
+            String line1 = "Первая строка", line2 = "Вторая строка";
+            System.out.printf("Длина 1-й строки (\"%s\") %s 2-й строки (\"%s\")", line1, (line1.length() > line2.length() ? "больше длины" : (line2.length() > line1.length()) ? "меньше длины" : "равна длине"), line2);
+            System.out.println();
+        }
+
+        // Определяем, является ли год високосным
+        {
+            int year = 2025;
+            boolean isYearLeap = ((year % 400) == 0) || (((year % 4) == 0) && ((year % 100) != 0));
+            System.out.printf("Год %s %s является високосным", year, (!isYearLeap ? "не" : ""));
+            System.out.println();
+        }
+
+        // Определяем индекс массы тела (Body Mass Index - bmi)
+        {
+            double weight = 81.0, height = 1.82;
+            double bodyMassIndex = weight / height;
+            String conclusion;
+
+            if (bodyMassIndex <= 16.0) {
+                conclusion = "Выраженный дефицит массы тела";
+            } else if (bodyMassIndex <= 25.0) {
+                conclusion = "Норма";
+            } else if (bodyMassIndex <= 30.0) {
+                conclusion = "Избыточная масса тела (предожирение)";
+            } else if (bodyMassIndex <= 35.0) {
+                conclusion = "Ожирение 1 степени";
+            } else if (bodyMassIndex <= 40.0) {
+                conclusion = "Ожирение 2 степени";
+            } else {
+                conclusion = "Ожирение 3 степени";
+            }
+            System.out.printf("Индекс массы тела %s при весе %sкг и росте %sм: %s", bodyMassIndex, weight, height, conclusion.toLowerCase());
+            System.out.println();
+        }
+
+        // Вывод в консоль таблицы истинности для операторов && и ||
+        {
+            boolean b1, b2;
+            System.out.println("b1\t\tb2\t\tb1&&b2\tb1||b2");
+
+            b1 = false;
+            b2 = false;
+            System.out.println(b1 + "\t" + b2 + "\t" + (b1 && b2) + "\t" + (b1 || b2));
+
+            b1 = true;
+            b2 = false;
+            System.out.println(b1 + "\t" + b2 + "\t" + (b1 && b2) + "\t" + (b1 || b2));
+
+            b1 = false;
+            b2 = true;
+            System.out.println(b1 + "\t" + b2 + "\t" + (b1 && b2) + "\t" + (b1 || b2));
+
+            b1 = true;
+            b2 = true;
+            System.out.println(b1 + "\t" + b2 + "\t" + (b1 && b2) + "\t" + (b1 || b2));
+        }
+
+        // Вывод в консоль квадрата
+        {
+            System.out.println("Заполненный квадрат");
+            int height = 5, width = height * 10  / 4;
+            for (int i = 0; i < height; i++) {
+                for (int j = 0; j < width; j++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+        }
+
+        // Вывод в консоль полого квадрата
+        {
+            System.out.println("Полый квадрат");
+            int height = 5, width = height * 10  / 4;
+            for (int i = 0; i < height; i++) {
+                for (int j = 0; j < width; j++) {
+                    if ((i == 0) || (i == height - 1) || (j == 0 || j == width -1))
+                        System.out.print("*");
+                    else
+                        System.out.print(" ");
+                }
+                System.out.println();
+            }
+        }
     }
 }
